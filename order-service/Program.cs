@@ -5,6 +5,8 @@ using order_service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 builder.Services.AddDbContext<AppDbContext>(o => o.UseInMemoryDatabase("jb_final"));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 

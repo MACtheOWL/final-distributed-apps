@@ -7,7 +7,7 @@ public class ProductServiceClient(HttpClient client)
         return client.GetFromJsonAsync<List<Product>>("/products")!;
     }
 
-    public async Task<Product?> GetById(int id)
+    public virtual async Task<Product?> GetById(int id)
     {
         var response = await client.GetAsync($"/products/{id}");
         if (response.IsSuccessStatusCode)

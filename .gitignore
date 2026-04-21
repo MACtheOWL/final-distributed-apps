@@ -87,6 +87,7 @@ fabric.properties
 .idea/modules
 *.iml
 *.ipr
+.vs/
 
 # CMake
 
