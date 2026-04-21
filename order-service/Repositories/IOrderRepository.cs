@@ -7,4 +7,6 @@ public interface IOrderRepository
     public List<Order> GetOrders();
 
     public Order? GetOrder(int id);
+
+    public Order AddOrder(Order order);
 }

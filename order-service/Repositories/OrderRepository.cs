@@ -14,4 +14,10 @@ public class OrderRepository(AppDbContext db) : IOrderRepository
     {
         return db.Orders.Find(id);
     }
+
+    public Order AddOrder(Order order)
+    {
+        db.Orders.Add(order);
+        return order;
+    }
 }

@@ -18,6 +18,8 @@ builder.Services.AddHttpClient<ProductServiceClient>(client =>
     client.BaseAddress = new Uri(builder.Configuration["ProductServiceUrl"] ??  "http://localhost:5003");
 });
 
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 var app = builder.Build();
 
 app.UseSwagger();
