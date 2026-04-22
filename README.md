@@ -30,7 +30,7 @@ Returns `404` if not found.
 ### Build with Docker:
 
 ```sh
-docker build -t product-service ./product-service
+docker build -t order-service ./order-service
 ```
 
 ### GET /orders
