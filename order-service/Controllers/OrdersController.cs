@@ -32,4 +32,19 @@ public class OrdersController(IOrderService orders) : ControllerBase
 
         return BadRequest("Order contains invalid product IDs");
     }
+
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Put(int id, [FromBody] Order order)
+    {
+        var updated = await orders.UpdateOrder(id, order);
+        if (updated == null) return NotFound();
+        return Ok(updated);
+    }
+
+    [HttpDelete("{id:int}")]
+    public IActionResult Delete(int id)
+    {
+        if (!orders.DeleteOrder(id)) return NotFound();
+        return NoContent();
+    }
 }

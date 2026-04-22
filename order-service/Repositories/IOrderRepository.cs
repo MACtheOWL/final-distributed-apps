@@ -9,4 +9,8 @@ public interface IOrderRepository
     public Order? GetOrder(int id);
 
     public Order AddOrder(Order order);
+
+    public Order? UpdateOrder(int id, Order order);
+
+    public bool DeleteOrder(int id);
 }
