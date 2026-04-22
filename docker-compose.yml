@@ -2,7 +2,7 @@ name: distributed-apps-final
 
 services:
     order-service:
-        image: order-service:latest
+        build: ./order-service
         restart: always
         depends_on:
             - product-service
@@ -11,6 +11,6 @@ services:
 
     product-service:
         restart: always
-        image: product-service:latest
+        build: ./product-service
         ports:
             - 3001:8080
